@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 @Component({
   selector: 'app-three-renderer',
@@ -24,6 +25,21 @@ export class ThreeRendererComponent implements OnInit, AfterViewInit {
 
     // Append canvas to the container div instead
     this.containerRef.nativeElement.appendChild(this.renderer.domElement);
+
+    // Create Orbit Controls
+    new OrbitControls(this.camera, this.renderer.domElement)
+
+    // Skybox
+    const loader = new THREE.CubeTextureLoader();
+    const skyboxTexture = loader.load([
+      '/textures/skybox/px.png', // +X (right)
+      '/textures/skybox/nx.png', // -X (left)
+      '/textures/skybox/py.png', // +Y (top)
+      '/textures/skybox/ny.png', // -Y (bottom)
+      '/textures/skybox/pz.png', // +Z (front)
+      '/textures/skybox/nz.png'  // -Z (back)
+    ]);
+    this.scene.background = skyboxTexture;
 
     // Scene objects
     const geometry = new THREE.BoxGeometry();
