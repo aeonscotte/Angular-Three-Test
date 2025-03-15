@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThreeRendererComponent } from '../../three-renderer/three-renderer.component';
+import { ThreeRendererComponent } from '../three-renderer/three-renderer.component';
 
 @Component({
   selector: 'app-threejs-container',
