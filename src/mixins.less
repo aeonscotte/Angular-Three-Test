@@ -1,24 +1,34 @@
-// Centering elements
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// Responsive Breakpoints
+// 📏 Responsive Utility
 .responsive(@size, @rules) {
   @media (max-width: @size) {
     @rules();
   }
 }
 
-// Example Usage
-.card {
-  padding: @spacing-unit * 2;
-  background: @primary-color;
-  border-radius: 8px;
+// ✨ Paper Card Style
+.paper-card {
+  background: @paper-bg;
+  box-shadow: @paper-shadow;
+  border-radius: @paper-border-radius;
+  padding: @spacing-md;
+}
 
-  .responsive(768px, {
-    padding: @spacing-unit;
-  });
+// 🖼️ Centered Flex Layout
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 🎨 Button Styling
+.button(@bg-color) {
+  background: @bg-color;
+  color: white;
+  padding: @spacing-sm @spacing-md;
+  border-radius: @paper-border-radius;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: darken(@bg-color, 10%);
+  }
 }

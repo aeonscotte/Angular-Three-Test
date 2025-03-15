@@ -1,3 +1,5 @@
+@import "theme.less";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,17 @@
 body {
   font-family: @font-family;
   font-size: @font-size-base;
-  background: @background-color;
-  color: @text-color;
+  line-height: @line-height-base;
+  font-weight: @font-weight-light;
+  background: @paper-bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: @font-weight-normal;
+  line-height: @line-height-base;
 }
