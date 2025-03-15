@@ -5,14 +5,6 @@
   }
 }
 
-// ✨ Paper Card Style
-.paper-card {
-  background: @paper-bg;
-  box-shadow: @paper-shadow;
-  border-radius: @paper-border-radius;
-  padding: @spacing-md;
-}
-
 // 🖼️ Centered Flex Layout
 .center-flex {
   display: flex;
@@ -31,4 +23,37 @@
   &:hover {
     background: darken(@bg-color, 10%);
   }
+}
+
+// 📦 Paper Container
+.paper-container(@padding: @default-padding, @margin: @default-margin) {
+  background: @paper-bg;
+  padding: @padding;
+  margin: @margin auto;
+  max-width: @content-width;
+  border-radius: @paper-border-radius;
+  box-shadow: @shadow-elevation;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// ✨ Paper Card Style
+// .paper-card {
+//   background: @paper-bg;
+//   box-shadow: @paper-shadow;
+//   border-radius: @paper-border-radius;
+//   padding: @spacing-md;
+// }
+
+.paper-card(@width: auto, @padding: @default-padding) {
+  background: @paper-bg;
+  padding: @padding;
+  border-radius: @paper-border-radius;
+  box-shadow: @shadow-small;
+  width: @width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

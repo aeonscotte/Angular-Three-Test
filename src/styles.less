@@ -3,3 +3,29 @@
 @import "theme.less";
 @import "mixins.less";
 @import "app/app.component.less";
+
+.page-container {
+  .paper-card(90%, 1.5rem); // Using the paper mixin
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
