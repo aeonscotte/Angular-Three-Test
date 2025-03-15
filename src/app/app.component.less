@@ -1,0 +1,10 @@
+.app-container {
+  width: @container-width;
+  margin: 0 auto;
+  padding: @spacing-unit * 2;
+
+  .responsive(768px, {
+    width: 100%;
+    padding: @spacing-unit;
+  });
+}
